@@ -1,0 +1,31 @@
+[gd_scene load_steps=9 format=3 uid="uid://imapd8fextvy"]
+
+[ext_resource type="PackedScene" uid="uid://dm868uxotpe00" path="res://Player/player.tscn" id="1_bgjfs"]
+[ext_resource type="PackedScene" uid="uid://bjhmjpp3tmdlr" path="res://enemy/ene_goblin_tnt.tscn" id="2_i5rq5"]
+[ext_resource type="PackedScene" uid="uid://bjaw3xsewyep1" path="res://ui/game_ui.tscn" id="3_wlkd4"]
+[ext_resource type="PackedScene" uid="uid://bw7pwl4vaduc4" path="res://enemy/sheep.tscn" id="4_ywubo"]
+[ext_resource type="PackedScene" uid="uid://d0ng335x3gxlw" path="res://enemy/ene_goblin_fire.tscn" id="5_ewwcf"]
+[ext_resource type="PackedScene" uid="uid://74fxhmjson0n" path="res://misc/Meat.tscn" id="6_sl6to"]
+[ext_resource type="PackedScene" uid="uid://b0ft3hpirbeeu" path="res://enemy/ene_goblin_dyna.tscn" id="7_f1s25"]
+[ext_resource type="PackedScene" uid="uid://dgwgw5utsi7xt" path="res://systems/ene_spawner.tscn" id="8_q2uhv"]
+
+[node name="TestPlayer" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_bgjfs")]
+position = Vector2(241, 189)
+
+[node name="RemoteTransform2D - camera" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(241, 189)
+
+[node name="Meat" parent="." instance=ExtResource("6_sl6to")]
+position = Vector2(1082, 556)
+
+[node name="GameUI" parent="." instance=ExtResource("3_wlkd4")]
+
+[node name="Node2DSpawner" parent="." instance=ExtResource("8_q2uhv")]
+creatures = Array[PackedScene]([ExtResource("4_ywubo"), ExtResource("5_ewwcf"), ExtResource("7_f1s25"), ExtResource("2_i5rq5")])

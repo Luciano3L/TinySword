@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=3 uid="uid://bw7pwl4vaduc4"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_w5wut"]
+[ext_resource type="PackedScene" uid="uid://ccybb8gkmfe4t" path="res://misc/SkulDead.tscn" id="2_f11ed"]
+[ext_resource type="PackedScene" uid="uid://74fxhmjson0n" path="res://misc/Meat.tscn" id="3_bo486"]
+[ext_resource type="Texture2D" uid="uid://suttot82f6rl" path="res://addons/Tiny Swords/Resources/Sheep/HappySheep_Bouncing.png" id="3_u6rsc"]
+[ext_resource type="Script" path="res://enemy/behavior/follow_player.gd" id="4_uor7d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwfqp"]
+atlas = ExtResource("3_u6rsc")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82dcs"]
+atlas = ExtResource("3_u6rsc")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga2qj"]
+atlas = ExtResource("3_u6rsc")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13r3h"]
+atlas = ExtResource("3_u6rsc")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypend"]
+atlas = ExtResource("3_u6rsc")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orj78"]
+atlas = ExtResource("3_u6rsc")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qydvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwfqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82dcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga2qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13r3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypend")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orj78")
+}],
+"loop": true,
+"name": &"caminha",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1d0wq"]
+radius = 16.0
+height = 32.0
+
+[node name="sheep" type="CharacterBody2D" groups=["enemys"]]
+motion_mode = 1
+script = ExtResource("1_w5wut")
+health = 6
+death_prefab = ExtResource("2_f11ed")
+drop_chance = 0.25
+drop_items = Array[PackedScene]([ExtResource("3_bo486")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_qydvr")
+animation = &"caminha"
+autoplay = "caminha"
+frame = 5
+frame_progress = 0.393521
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("CapsuleShape2D_1d0wq")
+
+[node name="FollowPlayer" type="Node" parent="."]
+script = ExtResource("4_uor7d")
+SPEED = 1.75
+
+[node name="DamageDigitMarker" type="Marker2D" parent="."]
+position = Vector2(0, -50)

@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://uvnma3a87tj3"]
+
+[ext_resource type="Texture2D" uid="uid://b720mupec35ln" path="res://addons/Tiny Swords/Terrain/Water/Foam/Foam.png" id="1_frokb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee43h"]
+atlas = ExtResource("1_frokb")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcnde"]
+atlas = ExtResource("1_frokb")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sibp"]
+atlas = ExtResource("1_frokb")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4unp1"]
+atlas = ExtResource("1_frokb")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nao4m"]
+atlas = ExtResource("1_frokb")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ulol"]
+atlas = ExtResource("1_frokb")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psxgg"]
+atlas = ExtResource("1_frokb")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eme6a"]
+atlas = ExtResource("1_frokb")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvx4w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee43h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcnde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sibp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4unp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nao4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ulol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psxgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eme6a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="WaterEffect" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kvx4w")
+autoplay = "default"
+frame_progress = 0.235117

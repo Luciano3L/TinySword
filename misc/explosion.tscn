@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://cr4pjs6ivvwvc"]
+
+[ext_resource type="Texture2D" uid="uid://nv5ps1dnoe8" path="res://addons/Tiny Swords/Effects/Explosion/Explosions.png" id="1_xnneu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ampnb"]
+atlas = ExtResource("1_xnneu")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2kwb"]
+atlas = ExtResource("1_xnneu")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f35r8"]
+atlas = ExtResource("1_xnneu")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x050q"]
+atlas = ExtResource("1_xnneu")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tthuq"]
+atlas = ExtResource("1_xnneu")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50vhi"]
+atlas = ExtResource("1_xnneu")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baggn"]
+atlas = ExtResource("1_xnneu")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28gxk"]
+atlas = ExtResource("1_xnneu")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7u5m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ampnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2kwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f35r8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x050q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tthuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50vhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baggn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28gxk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Explosion" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j7u5m")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0

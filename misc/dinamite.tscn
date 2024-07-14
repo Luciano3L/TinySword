@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://b21ct81tx7f3q"]
+
+[ext_resource type="Texture2D" uid="uid://cxhgj1qsgi1t" path="res://addons/Tiny Swords/Factions/Goblins/Troops/TNT/Dynamite/Dynamite.png" id="1_n27rp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krply"]
+atlas = ExtResource("1_n27rp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk106"]
+atlas = ExtResource("1_n27rp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fth11"]
+atlas = ExtResource("1_n27rp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_443ks"]
+atlas = ExtResource("1_n27rp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmgeh"]
+atlas = ExtResource("1_n27rp")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2x4s"]
+atlas = ExtResource("1_n27rp")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4pfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krply")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk106")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fth11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_443ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmgeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2x4s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Dinamite" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w4pfv")
+autoplay = "default"
+frame_progress = 0.0335855

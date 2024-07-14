@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1qp15nldnpq5"]
+
+[ext_resource type="Texture2D" uid="uid://dfprc51wkrh4f" path="res://addons/Tiny Swords/Deco/16.png" id="1_hhcla"]
+
+[node name="Dead" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -38)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_hhcla")

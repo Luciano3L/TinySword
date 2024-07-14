@@ -1,0 +1,221 @@
+[gd_scene load_steps=10 format=3 uid="uid://b7of5xb1jr1w6"]
+
+[ext_resource type="Texture2D" uid="uid://w5p3sdt5rw08" path="res://addons/Tiny Swords/UI/Ribbons/Ribbon_Blue_3Slides.png" id="1_0b00h"]
+[ext_resource type="Texture2D" uid="uid://dd5jga6r6u5f4" path="res://addons/Tiny Swords/UI/Banners/Banner_Connection_Down.png" id="1_sbtfu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0pwro"]
+texture = ExtResource("1_sbtfu")
+texture_margin_left = 96.0
+texture_margin_top = 32.0
+texture_margin_right = 96.0
+texture_margin_bottom = 48.0
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 32, 128, 160)
+
+[sub_resource type="LabelSettings" id="LabelSettings_shefn"]
+font_size = 18
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3q6l"]
+texture = ExtResource("1_0b00h")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+texture_margin_bottom = 22.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 192, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ecuxg"]
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_fsyub"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel2:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(190, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(417, 115)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(484, 160)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel2/Texto:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tkyrb"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel2:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.4822, 1),
+"update": 0,
+"values": [Vector2(190, 30), Vector2(190, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.594603, 1),
+"update": 0,
+"values": [Vector2(417, -111), Vector2(417, 115)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(484, -66), Vector2(484, 160)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel2/Texto:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8, 1),
+"transitions": PackedFloat32Array(3.4822, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel2/Texto")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1g85w"]
+_data = {
+"RESET": SubResource("Animation_fsyub"),
+"default": SubResource("Animation_tkyrb")
+}
+
+[node name="GameIntro" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 476.0
+offset_top = 120.0
+offset_right = 682.0
+offset_bottom = 525.0
+color = Color(0, 0, 0, 0.313726)
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 484.0
+offset_top = 160.0
+offset_right = 674.0
+offset_bottom = 460.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0pwro")
+
+[node name="Texto" type="Label" parent="Panel2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -108.0
+offset_right = 75.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Modo:
+Sobreviver
+Iniciar:   F5
+
+Move: 
+←  ↑   ↓  →
+Attack:   Z"
+label_settings = SubResource("LabelSettings_shefn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 417.0
+offset_top = 115.0
+offset_right = 741.0
+offset_bottom = 207.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_b3q6l")
+
+[node name="Titulo" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -31.5
+offset_right = 74.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "TINY RUN"
+label_settings = SubResource("LabelSettings_ecuxg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1g85w")
+}
+autoplay = "default"

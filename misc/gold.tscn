@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://1hyeau2c7080"]
+
+[ext_resource type="Texture2D" uid="uid://0buugtrclsri" path="res://addons/Tiny Swords/Resources/Resources/G_Spawn.png" id="1_dkkmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwut2"]
+atlas = ExtResource("1_dkkmf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyid1"]
+atlas = ExtResource("1_dkkmf")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4htju"]
+atlas = ExtResource("1_dkkmf")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yov45"]
+atlas = ExtResource("1_dkkmf")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nund"]
+atlas = ExtResource("1_dkkmf")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx2md"]
+atlas = ExtResource("1_dkkmf")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6q1d"]
+atlas = ExtResource("1_dkkmf")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7jrk2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwut2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyid1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4htju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yov45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nund")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx2md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6q1d")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fm073"]
+radius = 17.0294
+
+[node name="Gold" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7jrk2")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(4, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_fm073")
